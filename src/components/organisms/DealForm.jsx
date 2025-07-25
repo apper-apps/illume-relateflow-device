@@ -12,7 +12,7 @@ const [formData, setFormData] = useState({
     value: deal?.value || "",
     stage: deal?.stage || "Lead",
     contactId: deal?.contactId || "",
-    probability: deal?.probability || "3",
+    probability: deal?.probability || "0-3",
     expectedClose: deal?.expectedClose ? new Date(deal.expectedClose).toISOString().split("T")[0] : ""
   });
   const [contacts, setContacts] = useState([]);
@@ -67,7 +67,7 @@ const [formData, setFormData] = useState({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!validateForm()) {
@@ -81,7 +81,7 @@ try {
       const submitData = {
         ...formData,
         value: parseFloat(formData.value),
-        probability: String(formData.probability)
+        probability: formData.probability.includes('-') ? formData.probability : `0-${formData.probability}`
       };
 
       let result;
@@ -101,19 +101,19 @@ try {
     }
   };
 
-  const handleChange = (e) => {
+const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
     // Update probability based on stage
     if (name === "stage") {
 const stageProbabilities = {
-        "Lead": "1",
-        "Qualified": "2",
-        "Proposal": "3",
-        "Negotiation": "4",
-        "Closed Won": "5",
-        "Closed Lost": "0"
+        "Lead": "0-1",
+        "Qualified": "0-2",
+        "Proposal": "0-3",
+        "Negotiation": "0-4",
+        "Closed Won": "0-5",
+        "Closed Lost": "0-0"
       };
       setFormData(prev => ({ 
         ...prev, 
