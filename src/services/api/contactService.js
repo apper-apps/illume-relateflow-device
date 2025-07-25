@@ -85,12 +85,12 @@ class ContactService {
     }
   }
 
-  async create(contactData) {
+async create(contactData) {
     try {
       // Only include Updateable fields based on field visibility
       const params = {
         records: [{
-          Name: contactData.name,
+          Name: contactData.name || contactData.Name,
           email: contactData.email,
           phone: contactData.phone,
           company: contactData.company,
@@ -118,25 +118,33 @@ class ContactService {
           throw new Error(failedRecords[0].message || "Failed to create contact");
         }
         
-        return successfulRecords[0]?.data;
+        // Ensure we return the created record with proper structure
+        const createdRecord = successfulRecords[0]?.data;
+        if (createdRecord) {
+          return createdRecord;
+        } else {
+          throw new Error("No record data returned from successful creation");
+        }
+      } else {
+        throw new Error("No results returned from create operation");
       }
     } catch (error) {
       if (error?.response?.data?.message) {
         console.error("Error creating contact:", error?.response?.data?.message);
       } else {
-        console.error(error.message);
+        console.error("Contact service create error:", error.message);
       }
       throw error;
     }
   }
 
-  async update(id, contactData) {
+async update(id, contactData) {
     try {
       // Only include Updateable fields based on field visibility
       const params = {
         records: [{
           Id: parseInt(id),
-          Name: contactData.name,
+          Name: contactData.name || contactData.Name,
           email: contactData.email,
           phone: contactData.phone,
           company: contactData.company,
@@ -163,13 +171,21 @@ class ContactService {
           throw new Error(failedUpdates[0].message || "Failed to update contact");
         }
         
-        return successfulUpdates[0]?.data;
+        // Ensure we return the updated record with proper structure
+        const updatedRecord = successfulUpdates[0]?.data;
+        if (updatedRecord) {
+          return updatedRecord;
+        } else {
+          throw new Error("No record data returned from successful update");
+        }
+      } else {
+        throw new Error("No results returned from update operation");
       }
     } catch (error) {
       if (error?.response?.data?.message) {
         console.error("Error updating contact:", error?.response?.data?.message);
       } else {
-        console.error(error.message);
+        console.error("Contact service update error:", error.message);
       }
       throw error;
     }

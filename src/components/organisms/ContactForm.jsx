@@ -41,7 +41,7 @@ const [formData, setFormData] = useState({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!validateForm()) {
@@ -61,9 +61,16 @@ const [formData, setFormData] = useState({
         toast.success("Contact created successfully!");
       }
       
-      onSubmit(result);
+      // Ensure we have a valid result before calling onSubmit
+      if (result) {
+        onSubmit(result);
+      } else {
+        throw new Error("No data returned from service");
+      }
     } catch (error) {
+      console.error("Contact form submission error:", error);
       toast.error("Failed to save contact. Please try again.");
+      // Don't call onSubmit on error to prevent state issues
     } finally {
       setIsSubmitting(false);
     }

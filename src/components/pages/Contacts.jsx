@@ -94,16 +94,32 @@ filtered.sort((a, b) => {
     }
   };
 
-  const handleContactSubmit = (contactData) => {
-    if (selectedContact) {
-      setContacts(prev => prev.map(contact => 
-        contact.Id === selectedContact.Id ? contactData : contact
-      ));
-    } else {
-      setContacts(prev => [...prev, contactData]);
+const handleContactSubmit = async (contactData) => {
+    try {
+      if (selectedContact) {
+        // Update existing contact
+        setContacts(prev => prev.map(contact => 
+          contact.Id === selectedContact.Id ? contactData : contact
+        ));
+      } else {
+        // Add new contact
+        setContacts(prev => [...prev, contactData]);
+      }
+      
+      // Close modal and reset form state
+      setShowContactForm(false);
+      setSelectedContact(null);
+      
+      // Optionally refresh the contact list to ensure data consistency
+      // This prevents any state inconsistencies without causing a full page reload
+      setTimeout(() => {
+        filterAndSortContacts();
+      }, 100);
+      
+    } catch (error) {
+      console.error("Error handling contact submission:", error);
+      toast.error("There was an issue updating the contact list");
     }
-    setShowContactForm(false);
-    setSelectedContact(null);
   };
 
 const handleViewDeals = async (contact) => {
