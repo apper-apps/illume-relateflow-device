@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "title": "TechCorp Enterprise License",
+    "value": 150000,
+    "stage": "Negotiation",
+    "contactId": 1,
+    "probability": 75,
+    "expectedClose": "2024-02-15T00:00:00Z",
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "Innovate Co API Integration",
+    "value": 85000,
+    "stage": "Proposal",
+    "contactId": 2,
+    "probability": 60,
+    "expectedClose": "2024-02-28T00:00:00Z",
+    "createdAt": "2024-01-10T09:15:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "GrowthHub Marketing Suite",
+    "value": 45000,
+    "stage": "Qualified",
+    "contactId": 3,
+    "probability": 40,
+    "expectedClose": "2024-03-10T00:00:00Z",
+    "createdAt": "2024-01-08T15:20:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Alpha Ventures Platform Deal",
+    "value": 250000,
+    "stage": "Lead",
+    "contactId": 4,
+    "probability": 25,
+    "expectedClose": "2024-04-01T00:00:00Z",
+    "createdAt": "2024-01-12T13:45:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "Smart Logistics Optimization",
+    "value": 32000,
+    "stage": "Proposal",
+    "contactId": 5,
+    "probability": 50,
+    "expectedClose": "2024-02-20T00:00:00Z",
+    "createdAt": "2024-01-05T11:10:00Z"
+  },
+  {
+    "Id": 6,
+    "title": "Nexus Finance Security Package",
+    "value": 120000,
+    "stage": "Qualified",
+    "contactId": 6,
+    "probability": 35,
+    "expectedClose": "2024-03-15T00:00:00Z",
+    "createdAt": "2024-01-14T08:30:00Z"
+  },
+  {
+    "Id": 7,
+    "title": "Creative Studio Team License",
+    "value": 18000,
+    "stage": "Closed Won",
+    "contactId": 7,
+    "probability": 100,
+    "expectedClose": "2024-01-25T00:00:00Z",
+    "createdAt": "2024-01-03T14:55:00Z"
+  },
+  {
+    "Id": 8,
+    "title": "Global Retail Analytics Platform",
+    "value": 180000,
+    "stage": "Negotiation",
+    "contactId": 8,
+    "probability": 80,
+    "expectedClose": "2024-02-05T00:00:00Z",
+    "createdAt": "2024-01-09T16:40:00Z"
+  },
+  {
+    "Id": 9,
+    "title": "TechCorp Additional Modules",
+    "value": 75000,
+    "stage": "Lead",
+    "contactId": 1,
+    "probability": 20,
+    "expectedClose": "2024-05-01T00:00:00Z",
+    "createdAt": "2024-01-18T11:20:00Z"
+  }
+]

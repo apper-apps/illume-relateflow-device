@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "type": "call",
+    "description": "Initial discovery call to understand requirements and current challenges",
+    "contactId": 1,
+    "dealId": 1,
+    "timestamp": "2024-01-20T14:45:00Z",
+    "duration": 45
+  },
+  {
+    "Id": 2,
+    "type": "email",
+    "description": "Sent proposal and pricing information for enterprise license",
+    "contactId": 1,
+    "dealId": 1,
+    "timestamp": "2024-01-19T10:30:00Z",
+    "duration": null
+  },
+  {
+    "Id": 3,
+    "type": "meeting",
+    "description": "Technical demo session with development team",
+    "contactId": 2,
+    "dealId": 2,
+    "timestamp": "2024-01-18T15:00:00Z",
+    "duration": 60
+  },
+  {
+    "Id": 4,
+    "type": "note",
+    "description": "Follow-up required on security compliance documentation",
+    "contactId": 6,
+    "dealId": 6,
+    "timestamp": "2024-01-21T09:40:00Z",
+    "duration": null
+  },
+  {
+    "Id": 5,
+    "type": "call",
+    "description": "Price negotiation discussion and contract terms review",
+    "contactId": 8,
+    "dealId": 8,
+    "timestamp": "2024-01-22T15:30:00Z",
+    "duration": 30
+  },
+  {
+    "Id": 6,
+    "type": "email",
+    "description": "Sent welcome package and onboarding instructions",
+    "contactId": 7,
+    "dealId": 7,
+    "timestamp": "2024-01-15T12:10:00Z",
+    "duration": null
+  },
+  {
+    "Id": 7,
+    "type": "meeting",
+    "description": "Quarterly business review and expansion opportunities",
+    "contactId": 3,
+    "dealId": 3,
+    "timestamp": "2024-01-19T16:15:00Z",
+    "duration": 90
+  },
+  {
+    "Id": 8,
+    "type": "task",
+    "description": "Prepare custom integration proposal for API requirements",
+    "contactId": 2,
+    "dealId": 2,
+    "timestamp": "2024-01-17T13:20:00Z",
+    "duration": 120
+  },
+  {
+    "Id": 9,
+    "type": "call",
+    "description": "Budget confirmation and decision timeline discussion",
+    "contactId": 5,
+    "dealId": 5,
+    "timestamp": "2024-01-16T13:25:00Z",
+    "duration": 25
+  },
+  {
+    "Id": 10,
+    "type": "email",
+    "description": "Shared case studies and ROI calculations for similar implementations",
+    "contactId": 4,
+    "dealId": 4,
+    "timestamp": "2024-01-17T10:20:00Z",
+    "duration": null
+  }
+]

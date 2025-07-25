@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@techcorp.com",
+    "phone": "+1 (555) 123-4567",
+    "company": "TechCorp Solutions",
+    "role": "VP of Sales",
+    "notes": "Very interested in our enterprise solution. Has budget approved for Q1. Prefers email communication over phone calls.",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "lastActivity": "2024-01-20T14:45:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Michael Chen",
+    "email": "m.chen@innovate.co",
+    "phone": "+1 (555) 234-5678",
+    "company": "Innovate Co",
+    "role": "CTO",
+    "notes": "Technical decision maker. Interested in API capabilities and integration options. Scheduled demo for next week.",
+    "createdAt": "2024-01-10T09:15:00Z",
+    "lastActivity": "2024-01-18T11:30:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Emily Rodriguez",
+    "email": "emily.r@growthhub.io",
+    "phone": "+1 (555) 345-6789",
+    "company": "GrowthHub",
+    "role": "Marketing Director",
+    "notes": "Looking for marketing automation tools. Mentioned they're currently using a competitor but not satisfied with customer support.",
+    "createdAt": "2024-01-08T15:20:00Z",
+    "lastActivity": "2024-01-19T16:15:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "David Wilson",
+    "email": "david.wilson@alphaventures.com",
+    "phone": "+1 (555) 456-7890",
+    "company": "Alpha Ventures",
+    "role": "Managing Partner",
+    "notes": "Potential investor and customer. Interested in both using our platform and investing in Series B round.",
+    "createdAt": "2024-01-12T13:45:00Z",
+    "lastActivity": "2024-01-17T10:20:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Lisa Thompson",
+    "email": "lisa@smartlogistics.net",
+    "phone": "+1 (555) 567-8901",
+    "company": "Smart Logistics",
+    "role": "Operations Manager",
+    "notes": "Needs help with supply chain optimization. Very price-sensitive but has expressed strong interest in our solution.",
+    "createdAt": "2024-01-05T11:10:00Z",
+    "lastActivity": "2024-01-16T13:25:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "Robert Kim",
+    "email": "r.kim@nexusfinance.com",
+    "phone": "+1 (555) 678-9012",
+    "company": "Nexus Finance",
+    "role": "Head of IT",
+    "notes": "Security-focused buyer. Requires comprehensive compliance documentation and security audit results before proceeding.",
+    "createdAt": "2024-01-14T08:30:00Z",
+    "lastActivity": "2024-01-21T09:40:00Z"
+  },
+  {
+    "Id": 7,
+    "name": "Amanda Foster",
+    "email": "amanda.foster@creativestudio.com",
+    "phone": "+1 (555) 789-0123",
+    "company": "Creative Studio",
+    "role": "Creative Director",
+    "notes": "Small agency looking for affordable project management solution. Interested in team collaboration features.",
+    "createdAt": "2024-01-03T14:55:00Z",
+    "lastActivity": "2024-01-15T12:10:00Z"
+  },
+  {
+    "Id": 8,
+    "name": "James Park",
+    "email": "james.park@globalretail.org",
+    "phone": "+1 (555) 890-1234",
+    "company": "Global Retail Group",
+    "role": "Regional Manager",
+    "notes": "Large retail chain interested in customer analytics platform. Multiple locations need to be considered in pricing.",
+    "createdAt": "2024-01-09T16:40:00Z",
+    "lastActivity": "2024-01-22T15:30:00Z"
+  }
+]
