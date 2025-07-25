@@ -77,11 +77,10 @@ const DealForm = ({ deal = null, onSubmit, onCancel }) => {
 
     setIsSubmitting(true);
     
-    try {
+try {
       const submitData = {
         ...formData,
-        value: parseFloat(formData.value),
-        probability: parseInt(formData.probability)
+        value: parseFloat(formData.value)
       };
 
       let result;
