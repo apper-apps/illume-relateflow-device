@@ -7,7 +7,7 @@ import { AuthContext } from "@/App";
 const Header = ({ onMenuToggle, onQuickAdd }) => {
   const [searchValue, setSearchValue] = useState("");
   const location = useLocation();
-
+  const { logout } = useContext(AuthContext) || {};
   const getPageTitle = () => {
     const pathTitles = {
       "/": "Dashboard",
@@ -91,8 +91,7 @@ const Header = ({ onMenuToggle, onQuickAdd }) => {
 {/* User menu */}
           <div className="flex items-center gap-3">
             <button 
-              onClick={() => {
-                const { logout } = useContext(AuthContext) || {};
+onClick={() => {
                 if (logout) logout();
               }}
               className="px-3 py-2 text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-all duration-200 flex items-center gap-2"
