@@ -7,12 +7,12 @@ import { dealService } from "@/services/api/dealService";
 import { contactService } from "@/services/api/contactService";
 
 const DealForm = ({ deal = null, onSubmit, onCancel }) => {
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     title: deal?.title || "",
     value: deal?.value || "",
     stage: deal?.stage || "Lead",
     contactId: deal?.contactId || "",
-    probability: deal?.probability || 10,
+    probability: deal?.probability || "3",
     expectedClose: deal?.expectedClose ? new Date(deal.expectedClose).toISOString().split("T")[0] : ""
   });
   const [contacts, setContacts] = useState([]);
@@ -80,7 +80,8 @@ const DealForm = ({ deal = null, onSubmit, onCancel }) => {
 try {
       const submitData = {
         ...formData,
-        value: parseFloat(formData.value)
+        value: parseFloat(formData.value),
+        probability: String(formData.probability)
       };
 
       let result;
@@ -106,13 +107,13 @@ try {
     
     // Update probability based on stage
     if (name === "stage") {
-      const stageProbabilities = {
-        "Lead": 10,
-        "Qualified": 25,
-        "Proposal": 50,
-        "Negotiation": 75,
-        "Closed Won": 100,
-        "Closed Lost": 0
+const stageProbabilities = {
+        "Lead": "1",
+        "Qualified": "2",
+        "Proposal": "3",
+        "Negotiation": "4",
+        "Closed Won": "5",
+        "Closed Lost": "0"
       };
       setFormData(prev => ({ 
         ...prev, 
