@@ -96,25 +96,13 @@ filtered.sort((a, b) => {
 
 const handleContactSubmit = async (contactData) => {
     try {
-      if (selectedContact) {
-        // Update existing contact
-        setContacts(prev => prev.map(contact => 
-          contact.Id === selectedContact.Id ? contactData : contact
-        ));
-      } else {
-        // Add new contact
-        setContacts(prev => [...prev, contactData]);
-      }
-      
       // Close modal and reset form state
       setShowContactForm(false);
       setSelectedContact(null);
       
-      // Optionally refresh the contact list to ensure data consistency
-      // This prevents any state inconsistencies without causing a full page reload
-      setTimeout(() => {
-        filterAndSortContacts();
-      }, 100);
+      // Refresh the contact list from backend to ensure all contacts are visible
+      // This prevents any state inconsistencies and ensures proper display
+      await loadContacts();
       
     } catch (error) {
       console.error("Error handling contact submission:", error);
