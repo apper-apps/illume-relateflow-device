@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import ApperIcon from "@/components/ApperIcon";
 import SearchBar from "@/components/molecules/SearchBar";
 import Button from "@/components/atoms/Button";
-
+import { AuthContext } from "@/App";
 const Header = ({ onMenuToggle, onQuickAdd }) => {
   const [searchValue, setSearchValue] = useState("");
   const location = useLocation();
@@ -88,8 +88,19 @@ const Header = ({ onMenuToggle, onQuickAdd }) => {
             </span>
           </button>
 
-          {/* User menu */}
+{/* User menu */}
           <div className="flex items-center gap-3">
+            <button 
+              onClick={() => {
+                const { logout } = useContext(AuthContext) || {};
+                if (logout) logout();
+              }}
+              className="px-3 py-2 text-sm text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-all duration-200 flex items-center gap-2"
+              title="Logout"
+            >
+              <ApperIcon name="LogOut" size={16} />
+              <span className="hidden sm:inline">Logout</span>
+            </button>
             <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-medium shadow-lg">
               <ApperIcon name="User" size={16} />
             </div>

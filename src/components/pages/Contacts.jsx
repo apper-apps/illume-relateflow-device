@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import ContactCard from "@/components/molecules/ContactCard";
+import { toast } from "react-toastify";
+import { dealService } from "@/services/api/dealService";
+import { contactService } from "@/services/api/contactService";
+import ContactForm from "@/components/organisms/ContactForm";
+import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
 import SearchBar from "@/components/molecules/SearchBar";
 import Modal from "@/components/molecules/Modal";
-import ContactForm from "@/components/organisms/ContactForm";
-import Loading from "@/components/ui/Loading";
+import ContactCard from "@/components/molecules/ContactCard";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
-import Button from "@/components/atoms/Button";
-import Select from "@/components/atoms/Select";
-import { contactService } from "@/services/api/contactService";
-import { dealService } from "@/services/api/dealService";
-import { toast } from "react-toastify";
+import Loading from "@/components/ui/Loading";
 
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
@@ -45,21 +45,21 @@ const Contacts = () => {
   };
 
   const filterAndSortContacts = () => {
-    let filtered = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.role.toLowerCase().includes(searchTerm.toLowerCase())
+let filtered = contacts.filter(contact =>
+      contact.Name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      contact.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      contact.company?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      contact.role?.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    filtered.sort((a, b) => {
+filtered.sort((a, b) => {
       switch (sortBy) {
         case "name":
-          return a.name.localeCompare(b.name);
+          return (a.Name || "").localeCompare(b.Name || "");
         case "company":
-          return a.company.localeCompare(b.company);
+          return (a.company || "").localeCompare(b.company || "");
         case "created":
-          return new Date(b.createdAt) - new Date(a.createdAt);
+          return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
         case "activity":
           return new Date(b.lastActivity || 0) - new Date(a.lastActivity || 0);
         default:
@@ -106,15 +106,15 @@ const Contacts = () => {
     setSelectedContact(null);
   };
 
-  const handleViewDeals = async (contact) => {
+const handleViewDeals = async (contact) => {
     try {
       const deals = await dealService.getAll();
       const contactDeals = deals.filter(deal => deal.contactId === contact.Id);
       
       if (contactDeals.length === 0) {
-        toast.info(`No deals found for ${contact.name}`);
+        toast.info(`No deals found for ${contact.Name}`);
       } else {
-        toast.success(`Found ${contactDeals.length} deals for ${contact.name}`);
+        toast.success(`Found ${contactDeals.length} deals for ${contact.Name}`);
       }
     } catch (error) {
       toast.error("Failed to load deals");
